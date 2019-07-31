@@ -6,3 +6,12 @@ nav {
   padding: 0px 10px;
   background: white;
 }
+
+.grid {
+  margin: 10px;
+  background: #efefef;
+  border-radius: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+}
