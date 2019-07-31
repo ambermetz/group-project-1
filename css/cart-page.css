@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    background: white;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 3px;
+    background-color: lightgrey;
+    color: white;
+}
