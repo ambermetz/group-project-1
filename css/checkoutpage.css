@@ -1,5 +1,7 @@
 body {
   font-family: "Sarabun", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -15,3 +17,28 @@ nav {
   padding-left: 10px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.credit_checkout {
+  border: 5px solid lightgrey;
+  margin: 5px;
+  /*height: 20vh;*/
+}
+
+label, input {
+  margin: 5px;
+}
+
+label {
+  display: flex;
+}
+
+input {
+  display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+}
