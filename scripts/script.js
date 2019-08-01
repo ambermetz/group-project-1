@@ -1,14 +1,29 @@
 "use strict";
 
 class CheckoutItems {
-    constructor () {
-        this.products=products = [];
-    }
+  constructor(productName, productPrice) {
+    this.productName = productName;
+    this.productPrice = productPrice;
+  }
 }
 
+class AddProducts {
+  constructor() {
+    this.products = [];
+  }
+}
 
+function addProduct(productName, productPrice) {
+  console.log("You clicked me!!!!");
+  let checkoutItems = new CheckoutItems(productName, productPrice);
+  this.products.push(checkoutItems);
+}
 
+const cartClickListener = document.querySelector(".cart-icon");
+cartClickListener.addEventListener("click", addProduct);
 
+// click on add to cart button -> add the product name & price to an empty array.
+// index needs to be taken into account
 
 // ○ The item(s) the user will buy will be added to a cart until they are ready
 // for checkout.
