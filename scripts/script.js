@@ -1,3 +1,15 @@
+"use strict";
+
+class CheckoutItems {
+    constructor () {
+        this.products=products = [];
+    }
+}
+
+
+
+
+
 // ○ The item(s) the user will buy will be added to a cart until they are ready
 // for checkout.
 
