@@ -6,3 +6,19 @@ nav {
   padding: 0px 10px;
   background: white;
 }
+
+.fa-shopping-cart {
+  padding-right: 15px;
+}
+
+.grid {
+  margin: 10px;
+  background: #efefef;
+  border-radius: 3px;
+}
+
+img {
+}
+
+@media only screen and (min-width: 768px) {
+}
