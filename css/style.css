@@ -38,5 +38,13 @@ footer {
   justify-content: center;
 }
 
+.itemContent {
+  position: relative;
+}
+.cart-icon {
+  position: absolute;
+  bottom: 0%;
+}
+
 @media only screen and (min-width: 768px) {
 }
