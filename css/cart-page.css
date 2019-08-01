@@ -1,0 +1,32 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    background: white;
+}
+
+.total_price {
+    height: 20vh;
+    border: 5px solid lavender;
+    margin: 10px;
+}
+
+.cart_items {
+    border: 5px solid lavender;
+    height: 80vh;
+    margin: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 3px;
+    background-color: lightgrey;
+    color: white;
+    width: 80%;
+}
