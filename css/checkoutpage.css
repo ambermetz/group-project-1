@@ -11,6 +11,11 @@ nav {
   justify-content: space-between;
   padding: 0px 10px;
   background: white;
+  color: purple; /* Added color for fun */
+}
+
+.icons {
+  color: orange; /* Added color for fun */
 }
 
 .fa-shopping-cart {
@@ -25,20 +30,30 @@ main {
 .credit_checkout {
   border: 5px solid lightgrey;
   margin: 5px;
-  /*height: 20vh;*/
 }
 
 label, input {
   margin: 5px;
 }
 
-label {
+/* form {
   display: flex;
-}
+  flex-wrap: wrap;
+} */
 
 input {
   display: flex;
+  margin-left: 300px;
+  margin-top: -15px;
+}
+
+button {
+  margin: 5px;
+  background-color: lightgrey;
+  color: white;
+  border-radius: 3px;
+  width: 20%;
 }
 
 @media only screen and (min-width: 768px) {
-}
+} 
