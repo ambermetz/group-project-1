@@ -8,16 +8,34 @@ nav {
 }
 
 .fa-shopping-cart {
-  padding-right: 15px;
+  padding-left: 10px;
 }
 
-.grid {
-  margin: 10px;
+section {
+  margin-bottom: 10px;
   background: #efefef;
   border-radius: 3px;
+  display: flex;
 }
 
 img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+div.photo {
+  width: 50%;
+}
+
+button {
+  border-radius: 3px;
+  padding: 15px;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
