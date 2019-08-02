@@ -71,3 +71,24 @@ cartClickListener.addEventListener("click", addProduct);
 
 // ● A stretch goal is to implement validation for credit card numbers...
 // Might be an HTML thing that we can look into.
+
+// class Item {
+//   constructor(name, description, category, price) {
+//     this.name = name;
+//     this.description = description;
+//     this.category = category;
+//     this.price = price;
+//   }
+// }
+
+const cashSubmit = document.querySelector("#cash");
+
+document.querySelector("#cash").addEventListener("submit", showModal);
+
+function showModal(event) {
+  ".pop-up-showModal".style.display = "flex";
+}
+
+const creditSubmit = document.querySelector("#credit");
+
+document.querySelector("#credit").addEventListener("submit", showModal);
