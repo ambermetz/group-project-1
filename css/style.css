@@ -52,7 +52,7 @@ footer {
 
 /* CART MODAL */
 
-.cart-modal {
+#cart-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -65,7 +65,7 @@ footer {
 }
 
 /* CART MODAL CONTENT STYLING */
-.cart-content {
+#cart-content {
   background-color: #d8efee;
   margin: 15% auto;
   padding: 20px;
@@ -78,7 +78,7 @@ footer {
 
 /* CASH MODAL */
 
-.cash-payment-modal {
+#cash-payment-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -103,7 +103,7 @@ footer {
 }
 
 /* CREDIT MODAL */
-.credit-payment-modal {
+#credit-payment-modal {
   display: none;
   position: fixed;
   z-index: 1;
