@@ -36,7 +36,7 @@ cartClickListener.addEventListener("click", addProduct);
 
 const cartSubmit = document.querySelector("#submitCart");
 
-document.querySelector("body").addEventListener("click", cartModalHandler);
+document.querySelector("#submitCart").addEventListener("click", cartModalHandler);
 
 function cartModalHandler(e) {
   e.preventDefault();
@@ -54,53 +54,41 @@ document
 function cashModalHandler(e) {
   e.preventDefault();
   document.querySelector("#cash-payment-modal").style.display = "flex";
-  document.querySelector("#cart-modal").style.display = "hidden";
+  document.querySelector("#cart-modal").style.display = "none";
 }
-
 // // Credit Modal
 
-// const  = document.querySelector("");
+const creditSelection = document.querySelector("#credit-payment-modal");
 
-// document.querySelector("").addEventListener("click", );
+document.querySelector("#cart-modal").addEventListener("click", creditModalHandler);
 
-// function (e) {
-//   e.preventDefault();
-//   document.querySelector("").style.display = "flex";
-// }
+function creditModalHandler(e) {
+  e.preventDefault();
+  document.querySelector("#credit-payment-modal").style.display = "flex";
+  document.querySelector("#cart-modal").style.display = "none";
+}
 
-// const  = document.querySelector("");
+////RECEIPT MODAL
 
-// document.querySelector("").addEventListener("click", );
+const cashReceipt = document.querySelector(".pop-up-modal");
+document.querySelector(".checkout-cash-modal").addEventListener("submit", showModal);
 
-// const  = document.querySelector("");
 
-// document.querySelector("").addEventListener("click", );
 
-// function (e) {
-//   e.preventDefault();
-//   document.querySelector("").style.display = "flex";
-// }
+const creditReceipt = document.querySelector(".pop-up-modal");
+document.querySelector(".checkout-credit-modal").addEventListener("submit", showModal);
 
-// const  = document.querySelector("");
+function showModal(e) {
+  e.preventDefault();
+  console.log("this was clicked");
+  document.querySelector(".pop-up-modal").style.display = "flex";
+  document.querySelector("#credit-payment-modal").style.display = "none";
+  document.querySelector("#cash-payment-modal").style.display = "none";
+}
 
-// document.querySelector("").addEventListener("click", );
 
-// ////RECEIPT MODAL
 
-// const cashSubmit = document.querySelector("#cash");
-
-// document.querySelector("#cash").addEventListener("submit", showModal);
-
-// function showModal(e) {
-//   e.preventDefault();
-//   document.querySelector(".pop-up-modal").style.display = "flex";
-// }
-
-// const creditSubmit = document.querySelector("#credit");
-
-// document.querySelector("#credit").addEventListener("submit", showModal);
-
-//// END OF receipt modal
+// END OF RECEIPT MODAL
 
 // click on add to cart button -> add the product name & price to an empty array.
 // index needs to be taken into account
