@@ -1,3 +1,40 @@
+"use strict";
+
+class CheckoutItems {
+  constructor(productName, productPrice) {
+    this.productName = productName;
+    this.productPrice = productPrice;
+  }
+}
+
+class AddProducts {
+  constructor() {
+    this.products = [];
+  }
+}
+
+const newAddProduct = new AddProducts();
+
+function addProduct(e) {
+  console.log("You clicked me!!!!");
+
+  if (event.target.classList.contains(".cart-icon")) {
+    const index = e.target.getAttribute("index");
+    console.log(index);
+  }
+}
+
+// e.preventDefault();
+//   if (e.target.contains(".cart-icon")) {
+//     console.log("You clicked me!!!!");
+//   }
+
+const cartClickListener = document.querySelector("main");
+cartClickListener.addEventListener("click", addProduct);
+
+// click on add to cart button -> add the product name & price to an empty array.
+// index needs to be taken into account
+
 // ○ The item(s) the user will buy will be added to a cart until they are ready
 // for checkout.
 

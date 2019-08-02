@@ -1,5 +1,7 @@
 body {
   font-family: "Sarabun", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -9,10 +11,49 @@ nav {
   justify-content: space-between;
   padding: 0px 10px;
   background: white;
+  color: purple; /* Added color for fun */
+}
+
+.icons {
+  color: orange; /* Added color for fun */
 }
 
 .fa-shopping-cart {
   padding-left: 10px;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.credit_checkout {
+  border: 5px solid lightgrey;
+  margin: 5px;
+}
+
+label, input {
+  margin: 5px;
+}
+
+/* form {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+input {
+  display: flex;
+  margin-left: 300px; /* Moves/aligns the input boxes */
+  margin-top: -15px; /* Moves/aligns the input boxes */
+}
+
+button {
+  margin: 5px;
+  background-color: lightgrey;
+  color: white;
+  border-radius: 3px;
+  /*width: 20%;*/
 }
 
 /* The Modal (background) */
@@ -40,3 +81,7 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
+@media only screen and (min-width: 768px) {
+} 
+
