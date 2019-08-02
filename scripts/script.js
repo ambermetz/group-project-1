@@ -13,13 +13,23 @@ class AddProducts {
   }
 }
 
-function addProduct(productName, productPrice) {
+const newAddProduct = new AddProducts();
+
+function addProduct(e) {
   console.log("You clicked me!!!!");
-  let checkoutItems = new CheckoutItems(productName, productPrice);
-  this.products.push(checkoutItems);
+
+  if (event.target.classList.contains(".cart-icon")) {
+    const index = e.target.getAttribute("index");
+    console.log(index);
+  }
 }
 
-const cartClickListener = document.querySelector(".cart-icon");
+// e.preventDefault();
+//   if (e.target.contains(".cart-icon")) {
+//     console.log("You clicked me!!!!");
+//   }
+
+const cartClickListener = document.querySelector("main");
 cartClickListener.addEventListener("click", addProduct);
 
 // click on add to cart button -> add the product name & price to an empty array.
