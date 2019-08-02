@@ -43,8 +43,8 @@ label, input {
 
 input {
   display: flex;
-  margin-left: 300px;
-  margin-top: -15px;
+  margin-left: 300px; /* Moves/aligns the input boxes */
+  margin-top: -15px; /* Moves/aligns the input boxes */
 }
 
 button {
@@ -52,7 +52,7 @@ button {
   background-color: lightgrey;
   color: white;
   border-radius: 3px;
-  width: 20%;
+  /*width: 20%;*/
 }
 
 @media only screen and (min-width: 768px) {
