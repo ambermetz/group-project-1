@@ -32,6 +32,20 @@ function addProduct(e) {
 const cartClickListener = document.querySelector("main");
 cartClickListener.addEventListener("click", addProduct);
 
+////receipt modal
+const cashSubmit = document.querySelector("#cash");
+
+document.querySelector("#cash").addEventListener("submit", showModal);
+
+function showModal(e) {
+  e.preventDefault();
+  document.querySelector(".pop-up-modal").style.display = "flex";
+}
+
+const creditSubmit = document.querySelector("#credit");
+
+document.querySelector("#credit").addEventListener("submit", showModal);
+
 // click on add to cart button -> add the product name & price to an empty array.
 // index needs to be taken into account
 
@@ -80,15 +94,3 @@ cartClickListener.addEventListener("click", addProduct);
 //     this.price = price;
 //   }
 // }
-
-const cashSubmit = document.querySelector("#cash");
-
-document.querySelector("#cash").addEventListener("submit", showModal);
-
-function showModal(event) {
-  ".pop-up-showModal".style.display = "flex";
-}
-
-const creditSubmit = document.querySelector("#credit");
-
-document.querySelector("#credit").addEventListener("submit", showModal);
