@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 // class CheckoutItems {
 //   constructor(productName, productPrice) {
@@ -111,20 +111,19 @@ function creditModalHandler(e) {
 
 ////RECEIPT MODAL
 
-const cashReceipt = document.querySelector(".pop-up-modal");
+const cashReceipt = document.querySelector("#receipt-modal");
 document
   .querySelector(".checkout-cash-modal")
   .addEventListener("submit", showModal);
 
-const creditReceipt = document.querySelector(".pop-up-modal");
+const creditReceipt = document.querySelector("#receipt-modal");
 document
   .querySelector(".checkout-credit-modal")
   .addEventListener("submit", showModal);
 
 function showModal(e) {
   e.preventDefault();
-  console.log("this was clicked");
-  document.querySelector(".pop-up-modal").style.display = "flex";
+  document.querySelector("#receipt-modal").style.display = "flex";
   document.querySelector("#credit-payment-modal").style.display = "none";
   document.querySelector("#cash-payment-modal").style.display = "none";
 }
@@ -136,10 +135,10 @@ const products = {
     id: "camera",
     productImage: "assets/camera.jpg",
     productImageAlt: "old camera",
-    productName: "Snazzy old camera",
+    productName: "Snazzy Old Camera",
     productPrice: 500,
-    productDescription: `This really awesome camera was actually owned by Marilyn Monroe! Seriously.  If you don't buy it now, you'll probably regret it for the rest of your life.`,
-    productCategory: "Category: Cameras"
+    productDescription: `This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.`,
+    productCategory: "Cameras"
   },
   clock: {
     id: "clock",
@@ -148,8 +147,8 @@ const products = {
     productName: "Coffee Grinder Clock",
     productPrice: 100,
     productDescription:
-      "How many times have you wanted to know the time while you are grinding your coffee?  Wonder no more with this antique Coffee Grinder Clock combo.",
-    productCategory: "Category: Multi-Purpose<"
+      "How often have you wanted to know the time while you are grinding your coffee?  Wonder no more with this antique Coffee Grinder/Clock combo.",
+    productCategory: "Multi-Purpose"
   },
   dohicky: {
     id: "dohicky",
@@ -157,9 +156,9 @@ const products = {
     productImageAlt: "dohicky",
     productName: "Thing-a-ma-jig",
     productPrice: 200,
-    productDescription: "Category: Surprise",
-    productCategory:
-      "The only thing that we know is that this thing looks cool and anyone that owns it is immediately 20% cooler."
+    productDescription:
+      "The only thing that we know is that this thing looks cool and anyone that owns it is immediately 20% cooler.",
+    productCategory: "Other"
   },
   fan: {
     id: "oldFan",
@@ -168,18 +167,18 @@ const products = {
     productName: "Hot-Hot Fan",
     productPrice: 50,
     productDescription:
-      "This original Hot-Hot Fan will keep you nice and cool-cool.  What more could you want!?",
-    productCategory: "Category: Fan"
+      "This original Hot-Hot Fan will keep you nice and cool-cool. What more could you want!?",
+    productCategory: "Home Goods"
   },
   microphone: {
-    id: "",
+    id: "microphone",
     productImage: "assets/microphone.jpg",
     productImageAlt: "microphone",
     productName: "Old School Microphone",
     productPrice: 55,
     productDescription:
       "Use it to yell at your kids or pretend to do some morning announcements.",
-    productCategory: "Category: Microphone"
+    productCategory: "Office Supplies"
   },
   receiptPrinter: {
     id: "receiptPrinter",
@@ -189,7 +188,7 @@ const products = {
     productPrice: 95,
     productDescription:
       "For when you want to provide proof of purchase the hard way.",
-    productCategory: "Category: Office Item"
+    productCategory: "Office Supplies"
   },
   pencilSharpener: {
     id: "pencilSharpener",
@@ -198,7 +197,7 @@ const products = {
     productName: "Pencil Sharpener",
     productPrice: 25,
     productDescription: "Don't stick your fingers inside. Pencils only.",
-    productCategory: "Category: Office Supplies"
+    productCategory: "Office Supplies"
   },
   phone: {
     id: "phone",
@@ -207,7 +206,7 @@ const products = {
     productName: "Rotary Phone",
     productPrice: 85,
     productDescription: "Dial up your friends with style.",
-    productCategory: "Category: Phone"
+    productCategory: "Office Supplies"
   },
   musicPlayer: {
     id: "musicPlayer",
@@ -215,8 +214,8 @@ const products = {
     productImageAlt: "sony music player",
     productName: "Music Player",
     productPrice: 45,
-    productDescription: "Want to go back to the simpler days of ",
-    productCategory: "Category: Music"
+    productDescription: "Want to go back to the simpler days of ...?",
+    productCategory: "Music"
   },
   boombox: {
     id: "boombox",
@@ -224,9 +223,8 @@ const products = {
     productImageAlt: "sony boombox",
     productName: "Dope Boombox",
     productPrice: 150,
-    productDescription:
-      "WE NEED TO THINK OF SOMETHING TO PUT HERE.  MY BRAIN IS BROKE.",
-    productCategory: "Category: Music"
+    productDescription: "That's how I became the Fresh Prince of Bel Aire.",
+    productCategory: "Music"
   },
   stopwatch: {
     id: "stopwatch",
@@ -234,18 +232,17 @@ const products = {
     productImageAlt: "stopwatch",
     productName: "Stopwatch",
     productPrice: 30,
-    productDescription:
-      "WE NEED TO THINK OF SOMETHING TO PUT HERE.  MY BRAIN IS BROKE.",
-    productCategory: ""
+    productDescription: "Time people or things that...like to be timed.",
+    productCategory: "Gadget"
   },
   recorder: {
     id: "recorder",
     productImage: "tape recorder",
-    productImageAlt: "assets/taperecorder.jpg",
+    productImageAlt: "tape.jpg",
     productName: "Tape Recorder",
     productPrice: 175,
-    productDescription: "Record all those tapes",
-    productCategory: "Category: Spy Tech"
+    productDescription: "Record all those tapes.",
+    productCategory: "Spy Tech"
   }
 };
 // takes an array of items and reduces it to a single value.
@@ -253,7 +250,7 @@ let productsTemplate = Object.values(products).reduce((acc, product) => {
   return (
     acc +
     `<section id="${product.id}">   
-  <div class="">
+  <div class="item">
           <img alt="${product.productImageAlt}" src="${product.productImage}" />
         </div>
         <div class="itemContent">

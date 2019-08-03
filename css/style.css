@@ -17,9 +17,8 @@ nav {
 
 section {
   margin-bottom: 10px;
-  background: ##d8efee;
+  background: #d8efee;
   border-radius: 3px;
-  display: flex;
 }
 
 img {
@@ -27,8 +26,8 @@ img {
   border-radius: 3px;
 }
 
-div.photo {
-  width: 50%;
+#camera {
+  display: flex;
 }
 
 button {
@@ -44,10 +43,27 @@ footer {
 
 .itemContent {
   position: relative;
+  width: 100%;
+  border-radius: 3px;
 }
+
 .cart-icon {
   position: absolute;
   bottom: 0%;
+  right: 20px;
+}
+
+/* #productsList {
+  display: flex;
+} */
+
+.item {
+  display: flex;
+}
+
+p {
+  font-size: 12px;
+  margin-left: 5px;
 }
 
 /* CART MODAL */
@@ -128,7 +144,7 @@ footer {
 }
 
 /* RECEIPT MODAL BACKGROUND  STYLING*/
-.pop-up-modal {
+#receipt-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -153,4 +169,7 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
+  p {
+    font-size: 16px;
+  }
 }
