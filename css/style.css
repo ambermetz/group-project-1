@@ -3,16 +3,8 @@ body {
 }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   padding: 0px 10px;
   background: white;
-}
-
-.fa-shopping-cart {
-  padding-left: 10px;
 }
 
 section {
@@ -26,7 +18,18 @@ img {
   border-radius: 3px;
 }
 
-#camera {
+#camera,
+#clock,
+#dohicky,
+#oldFan,
+#microphone,
+#receiptPrinter,
+#pencilSharpener,
+#phone,
+#musicPlayer,
+#boombox,
+#stopwatch,
+#recorder {
   display: flex;
 }
 
@@ -53,17 +56,12 @@ footer {
   right: 20px;
 }
 
-/* #productsList {
-  display: flex;
-} */
-
-.item {
+#p {
   display: flex;
 }
 
 p {
   font-size: 12px;
-  margin-left: 5px;
 }
 
 /* CART MODAL */
