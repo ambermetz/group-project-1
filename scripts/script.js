@@ -1,74 +1,5 @@
 "use strict";
 
-// class CheckoutItems {
-//   constructor(productName, productPrice) {
-//     this.productName = productName;
-//     this.productPrice = productPrice;
-//   }
-// }
-
-// class ShoppingCart {
-// //   constructor() {
-//     this.cart = [];
-//     this.total = 0;
-//     this.salesTax = 0.06;
-//     this.subTotal = 0;
-//   }
-//   addItemToCart(productName, productPrice) {
-//     const newProduct = new CheckoutItems(productName, productPrice);
-//     this.cart.push(newProduct);
-
-//     // index needs to be taken into account
-//   }
-//   displayProduct() {
-//     // - Creates a div on the cart page and users innerHTML to display items
-//     // ● Provide a receipt for the payment which includes the item(s) bought, the subtotal, total
-//   }
-//   total() {
-//     this.total += productPrice;
-//     console.log(this.total);
-
-//     this.subTotal += this.total * this.salesTax;
-// //   }
-
-// //   changeAmount() {
-//     // ● If the user is paying in cash, ask for the amount tendered and provide change.
-//     // take the total from the cash checkout page and display remaining.
-//   }
-// }
-
-// const findIndex = document.querySelector(".productName");
-// const productName = findIndex.textContent;
-// console.dir(findIndex);
-
-// // const newShoppingCart = new ShoppingCart();
-// // console.dir(newShoppingCart);
-// // newShoppingCart.cart(productName, productPrice);
-
-// const cartClickListener = document.querySelector(".cart-icon");
-// cartClickListener.addEventListener("click", clickCartIconHandler);
-
-// function clickCartIconHandler() {
-//   // console.log("You clicked me!!!!");
-//   // const productName = event.target[0].value;
-//   // const productPrice = event.target[].value;
-
-//   addressBook.add(productName, productPrice);
-
-//   addressBook.display();
-//   if (event.target.classList.contains(".cart-icon")) {
-//     const index = e.target.getAttribute("index");
-//     // }
-// }
-
-// newShoppingCart.addItemToCart("test", "test");
-
-// const div = document.createElement("div");
-// div.innerHTML = `
-//     <p>This is working</p>
-//     `;
-// document.querySelector(".productName").append("#cart-modal");
-
 // Cart Modal
 
 const cartSubmit = document.querySelector("#submitCart");
@@ -237,8 +168,8 @@ const products = {
   },
   recorder: {
     id: "recorder",
-    productImage: "tape recorder",
-    productImageAlt: "tape.jpg",
+    productImage: "assets/tape.jpg",
+    productImageAlt: "tape recorder",
     productName: "Tape Recorder",
     productPrice: 175,
     productDescription: "Record all those tapes.",
@@ -267,6 +198,12 @@ let productsTemplate = Object.values(products).reduce((acc, product) => {
 
 document.querySelector("#productsList").innerHTML = productsTemplate;
 
+const cartClickListener = document.querySelector(".cart-icon");
+cartClickListener.addEventListener("click", clickCartIconHandler);
+
+function clickCartIconHandler() {
+  console.log("You clicked me!!!!");
+}
 // event listener
 
 //for (const productKey of cart) {
@@ -276,3 +213,11 @@ document.querySelector("#productsList").innerHTML = productsTemplate;
 // products[productkey].productPrice;
 // products[productkey].productName;
 // }
+//
+
+class CheckoutItems {
+  //   constructor(productName, productPrice) {
+  //     this.productName = productName;
+  //     this.productPrice = productPrice;
+  //   }
+}
