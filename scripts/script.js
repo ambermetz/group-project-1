@@ -16,32 +16,24 @@ function cartModalHandler(e) {
 // Cash Modal
 
 const cashSelection = document.querySelector("#cash-payment-modal");
-
 document
   .querySelector("#cart-modal")
   .addEventListener("click", cashModalHandler);
-
 function cashModalHandler(e) {
   e.preventDefault();
   document.querySelector("#cash-payment-modal").style.display = "flex";
   document.querySelector("#cart-modal").style.display = "none";
 }
-// // Credit Modal
-
 const creditSelection = document.querySelector("#credit-payment-modal");
 
 document
   .querySelector("#cart-modal")
   .addEventListener("click", creditModalHandler);
-
 function creditModalHandler(e) {
   e.preventDefault();
   document.querySelector("#credit-payment-modal").style.display = "flex";
   document.querySelector("#cart-modal").style.display = "none";
 }
-
-////RECEIPT MODAL
-
 const cashReceipt = document.querySelector("#receipt-modal");
 document
   .querySelector(".checkout-cash-modal")
@@ -69,7 +61,8 @@ const products = {
     productName: "Snazzy Old Camera",
     productPrice: 500,
     productDescription: `This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.`,
-    productCategory: "Cameras"
+    productCategory: "Cameras",
+    productButton: "<button value='but1'>Add to cart</button>"
   },
   clock: {
     id: "clock",
@@ -79,7 +72,8 @@ const products = {
     productPrice: 100,
     productDescription:
       "How often have you wanted to know the time while you are grinding your coffee?  Wonder no more with this antique Coffee Grinder/Clock combo.",
-    productCategory: "Multi-Purpose"
+    productCategory: "Multi-Purpose",
+    productButton: "<button value='but2'>Add to cart</button>"
   },
   dohicky: {
     id: "dohicky",
@@ -89,7 +83,8 @@ const products = {
     productPrice: 200,
     productDescription:
       "The only thing that we know is that this thing looks cool and anyone that owns it is immediately 20% cooler.",
-    productCategory: "Other"
+    productCategory: "Other",
+    productButton: "<button value='but3'>Add to cart</button>"
   },
   fan: {
     id: "oldFan",
@@ -99,7 +94,8 @@ const products = {
     productPrice: 50,
     productDescription:
       "This original Hot-Hot Fan will keep you nice and cool-cool. What more could you want!?",
-    productCategory: "Home Goods"
+    productCategory: "Home Goods",
+    productButton: "<button value='but4'>Add to cart</button>"
   },
   microphone: {
     id: "microphone",
@@ -109,7 +105,8 @@ const products = {
     productPrice: 55,
     productDescription:
       "Use it to yell at your kids or pretend to do some morning announcements.",
-    productCategory: "Office Supplies"
+    productCategory: "Office Supplies",
+    productButton: "<button value='but5'>Add to cart</button>"
   },
   receiptPrinter: {
     id: "receiptPrinter",
@@ -119,7 +116,8 @@ const products = {
     productPrice: 95,
     productDescription:
       "For when you want to provide proof of purchase the hard way.",
-    productCategory: "Office Supplies"
+    productCategory: "Office Supplies",
+    productButton: "<button value='but6'>Add to cart</button>"
   },
   pencilSharpener: {
     id: "pencilSharpener",
@@ -128,7 +126,8 @@ const products = {
     productName: "Pencil Sharpener",
     productPrice: 25,
     productDescription: "Don't stick your fingers inside. Pencils only.",
-    productCategory: "Office Supplies"
+    productCategory: "Office Supplies",
+    productButton: "<button value='but7'>Add to cart</button>"
   },
   phone: {
     id: "phone",
@@ -137,7 +136,8 @@ const products = {
     productName: "Rotary Phone",
     productPrice: 85,
     productDescription: "Dial up your friends with style.",
-    productCategory: "Office Supplies"
+    productCategory: "Office Supplies",
+    productButton: "<button value='but8'>Add to cart</button>"
   },
   musicPlayer: {
     id: "musicPlayer",
@@ -146,7 +146,8 @@ const products = {
     productName: "Music Player",
     productPrice: 45,
     productDescription: "Want to go back to the simpler days of ...?",
-    productCategory: "Music"
+    productCategory: "Music",
+    productButton: "<button value='but9'>Add to cart</button>"
   },
   boombox: {
     id: "boombox",
@@ -155,7 +156,8 @@ const products = {
     productName: "Dope Boombox",
     productPrice: 150,
     productDescription: "That's how I became the Fresh Prince of Bel Aire.",
-    productCategory: "Music"
+    productCategory: "Music",
+    productButton: "<button value='but10'>Add to cart</button>"
   },
   stopwatch: {
     id: "stopwatch",
@@ -164,7 +166,8 @@ const products = {
     productName: "Stopwatch",
     productPrice: 30,
     productDescription: "Time people or things that...like to be timed.",
-    productCategory: "Gadget"
+    productCategory: "Gadget",
+    productButton: "<button value='but11'>Add to cart</button>"
   },
   recorder: {
     id: "recorder",
@@ -173,9 +176,12 @@ const products = {
     productName: "Tape Recorder",
     productPrice: 175,
     productDescription: "Record all those tapes.",
-    productCategory: "Spy Tech"
+    productCategory: "Spy Tech",
+    productButton: "<button value='but12'>Add to cart</button>"
   }
 };
+console.log(products);
+
 // takes an array of items and reduces it to a single value.
 let productsTemplate = Object.values(products).reduce((acc, product) => {
   return (
@@ -189,81 +195,116 @@ let productsTemplate = Object.values(products).reduce((acc, product) => {
           <p class="productPrice">$${product.productPrice}</p>
           <p>${product.productDescription}</p>
           <p>Category: ${product.productCategory} </p>
-          <i class="fas fa-shopping-cart cart-icon"></i>
+          <p>${product.productButton}</p>
         </div>
       </section>
       `
   );
 }, "");
-
+// <button value="button1"><i class="fas fa-shopping-cart cart-icon"></i></button>
 // let cart = [];
 
-class Cart {
-  constructor() {
-    this.cart = [];
+// class Cart {
+//   constructor() {
+//     this.cart = [];
+//   }
+//   add() {
+//     this.cart.push(newCart);
+//   }
+//   // }
+
+//   // class Prod {
+//   //   constructor(addProductName, addProductPrice) {
+//   //     let addProductName = addProductName;
+//   //     let addProductPrice = addProductPrice;
+//   //   }
+// }
+function clickCartIconHandler(event) {
+  event.preventDefault();
+  // console.log("You clicked me!!!!");
+  if (event.target.value === "but1") {
+    console.log("You pressed button1");
+  } else if (event.target.value === "but2") {
+    console.log("You pressed button2");
+  } else if (event.target.value === "but3") {
+    console.log("You pressed button3");
+  } else if (event.target.value === "but4") {
+    console.log("You pressed button4");
+  } else if (event.target.value === "but5") {
+    console.log("You pressed button5");
+  } else if (event.target.value === "but6") {
+    console.log("You pressed button6");
+  } else if (event.target.value === "but7") {
+    console.log("You pressed button7");
+  } else if (event.target.value === "but8") {
+    console.log("You pressed button8");
+  } else if (event.target.value === "but9") {
+    console.log("You pressed button9");
+  } else if (event.target.value === "but10") {
+    console.log("You pressed button10");
+  } else if (event.target.value === "but11") {
+    console.log("You pressed button11");
+  } else if (event.target.value === "but12") {
+    console.log("You pressed button12");
   }
-  // add(productName, productPrice) {
-  //   this.cart.push(newCart);
+
+  // for (const productKey of cart) {
+  //   const prod = products[productKey];
+  //   prod.productPrice;
+  //   prod.productName;
+  //   products[productKey].productPrice;
+  //   products[productKey].productName;
   // }
+
+  // const div = document.createElement("div");
+  // div.innerHTML = `
+  //     <p>${products.productName}</p>
+  //     <p>${products.productPrice}</p>
+  //     `;
+  // document.querySelector("#cart-modal").append(div);
 }
 
 // event listener
 
 document.querySelector("#productsList").innerHTML = productsTemplate;
 
-let newCart = new Cart();
+const cart = document.createElement("div");
 
-const cartClickListener = document.querySelector(".cart-icon");
-cartClickListener.addEventListener("click", clickCartIconHandler);
-
-function clickCartIconHandler() {
-  console.log("You clicked me!!!!");
-  for (const productKey of newCart) {
-    const prod = products[productKey];
-    prod.productPrice;
-    prod.productName;
-    products[productKey].productPrice;
-    products[productKey].productName;
-  }
-}
-console.dir(newCart);
-
-// display() {
-//   // console.log(this.contacts);
-//   document.querySelector(".contact_results").innerHTML = "";
-//   addressBook.contacts.forEach((contact, index) => {
-//     const div = document.createElement("div");
-//     div.innerHTML = `
-//     <p>Name: ${contact.name}</p>
-//     <p>Email: ${contact.email}</p>
-//     <p>Phone: ${contact.phone}</p>
-//     <p>Relation: ${contact.relation}</p>
-//     <i class="fas fa-trash" index="${index}"></i>
-//     `;
-//     document.querySelector(".contact_results").append(div);
-//   });
-
-// class Contact {
-//   constructor(name, email, phone, relation) {
-//     this.name = name;
-//     this.email = email;
-//     this.phone = phone;
-//     this.relation = relation;
-//   }
-// }
-
-//   display() {
-//     // console.log(this.contacts);
-//     document.querySelector(".contact_results").innerHTML = "";
-//     addressBook.contacts.forEach((contact, index) => {
-//       const div = document.createElement("div");
-//       div.innerHTML = `
-//       <p>Name: ${contact.name}</p>
-//       <p>Email: ${contact.email}</p>
-//       <p>Phone: ${contact.phone}</p>
-//       <p>Relation: ${contact.relation}</p>
-//       <i class="fas fa-trash" index="${index}"></i>
-//       `;
-//       document.querySelector(".contact_results").append(div);
-//     });
-//   }
+document
+  .querySelector("#camera")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#clock")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#dohicky")
+  .addEventListener("click", clickCartIconHandler);
+document.querySelector("#fan").addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#microphone")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#receiptPrinter")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#pencilSharpener")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#phone")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#musicPlayer")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#boombox")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#stopwatch")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#boombox")
+  .addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#recorder")
+  .addEventListener("click", clickCartIconHandler);
+// console.dir(newCart);
