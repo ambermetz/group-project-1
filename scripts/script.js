@@ -196,28 +196,74 @@ let productsTemplate = Object.values(products).reduce((acc, product) => {
   );
 }, "");
 
+// let cart = [];
+
+class Cart {
+  constructor() {
+    this.cart = [];
+  }
+  // add(productName, productPrice) {
+  //   this.cart.push(newCart);
+  // }
+}
+
+// event listener
+
 document.querySelector("#productsList").innerHTML = productsTemplate;
+
+let newCart = new Cart();
 
 const cartClickListener = document.querySelector(".cart-icon");
 cartClickListener.addEventListener("click", clickCartIconHandler);
 
 function clickCartIconHandler() {
   console.log("You clicked me!!!!");
+  for (const productKey of newCart) {
+    const prod = products[productKey];
+    prod.productPrice;
+    prod.productName;
+    products[productKey].productPrice;
+    products[productKey].productName;
+  }
 }
-// event listener
+console.dir(newCart);
 
-//for (const productKey of cart) {
-// const prod = products[productkey]
-// prod.productPrice;
-// prod.productName;
-// products[productkey].productPrice;
-// products[productkey].productName;
+// display() {
+//   // console.log(this.contacts);
+//   document.querySelector(".contact_results").innerHTML = "";
+//   addressBook.contacts.forEach((contact, index) => {
+//     const div = document.createElement("div");
+//     div.innerHTML = `
+//     <p>Name: ${contact.name}</p>
+//     <p>Email: ${contact.email}</p>
+//     <p>Phone: ${contact.phone}</p>
+//     <p>Relation: ${contact.relation}</p>
+//     <i class="fas fa-trash" index="${index}"></i>
+//     `;
+//     document.querySelector(".contact_results").append(div);
+//   });
+
+// class Contact {
+//   constructor(name, email, phone, relation) {
+//     this.name = name;
+//     this.email = email;
+//     this.phone = phone;
+//     this.relation = relation;
+//   }
 // }
-//
 
-class CheckoutItems {
-  //   constructor(productName, productPrice) {
-  //     this.productName = productName;
-  //     this.productPrice = productPrice;
-  //   }
-}
+//   display() {
+//     // console.log(this.contacts);
+//     document.querySelector(".contact_results").innerHTML = "";
+//     addressBook.contacts.forEach((contact, index) => {
+//       const div = document.createElement("div");
+//       div.innerHTML = `
+//       <p>Name: ${contact.name}</p>
+//       <p>Email: ${contact.email}</p>
+//       <p>Phone: ${contact.phone}</p>
+//       <p>Relation: ${contact.relation}</p>
+//       <i class="fas fa-trash" index="${index}"></i>
+//       `;
+//       document.querySelector(".contact_results").append(div);
+//     });
+//   }
