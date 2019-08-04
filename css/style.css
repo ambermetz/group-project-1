@@ -1,6 +1,5 @@
 body {
   font-family: "Sarabun", sans-serif;
-  background: url("http://www.sclance.com/backgrounds/background-for-websites/background-for-websites_190421.jpg");
 }
 
 nav {
@@ -13,10 +12,10 @@ h1 {
 
 section {
   margin-bottom: 10px;
-  /* background: #d8efee;  */
   border-radius: 3px;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.1);
+  /* background: rgba(255, 255, 255, 0.5); */ /* Makes the containers opaque white, but this is set to mobile which is not correct */
 } 
 
 img {
@@ -44,8 +43,9 @@ button {
   border-radius: 3px;
   padding: 15px;
   width: 100%;
-  background-color: lightgrey; /* Also changes color of modal buttons */
+  background-color: whitesmoke; /* Also changes color of modal buttons */
   font-size: 12px;
+  margin: 5px;
 }
 
 footer {
@@ -83,7 +83,7 @@ p {
   z-index: 1;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 55%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
@@ -91,8 +91,7 @@ p {
 
 /* CART MODAL CONTENT STYLING */
 #cart-content {
-  /* background-color: #d8efee; */
-  background-color: #898886;
+  background-color: #d8efee;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -118,11 +117,10 @@ p {
 
 /* CASH MODAL CONTENT STYLING */
 .checkout-cash-modal {
-  /* background-color: #d8efee; */
-  background-color: #898886;
+  background-color: #d8efee;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #888;;
   border-radius: 4px;
   width: 60%;
   display: flex;
@@ -144,8 +142,7 @@ p {
 
 /* CREDIT MODAL CONTENT STYLING */
 .checkout-credit-modal {
-  /* background-color: #d8efee; */
-  background-color: #898886;
+  background-color: #d8efee; 
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -170,8 +167,7 @@ p {
 
 /* RECEIPT MODAL CONTENT STYLING */
 .modal {
-  /* background-color: #d8efee; */
-  background-color: #898886;
+  background-color: #d8efee;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -185,7 +181,16 @@ p {
   p {
     font-size: 16px;
   }
+  section {
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.5); /* Makes the containers opaque white */
+  }
   button {
     font-size: 16px;
   }
+  body {
+		background-image: url("https://image.freepik.com/free-photo/grunge-aquarelle-painted-textured-surface_23-2148118078.jpg");
+    background-repeat: no-repeat;
+		background-size: cover;
 }
