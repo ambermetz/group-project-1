@@ -95,18 +95,6 @@ class Items {
   }
 }
 
-function display(list, location) {
-  document.querySelector(location).innerHTML = "";
-  for (let item of list) {
-    const div = document.createElement("div");
-    // div.classList.add();
-    div.innerHTML = `
-        <p> ${item.name} $${item.price}</p>
-        `;
-    document.querySelector(location).append(div);
-  }
-}
-
 function addToCartHandler() {
   event.preventDefault();
   console.log("I was clicked");
