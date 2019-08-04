@@ -54,6 +54,7 @@ function showModal(e) {
 class Products {
   constructor() {
     this.products = [];
+    this.total = 0;
   }
   add(productName, productPrice, productDescription, productCategory) {
     let newProduct = new Items(
@@ -73,22 +74,16 @@ class Products {
       <p>$${product.productPrice}</p>
       <p>${product.productDescription}</p>
       <p>Category: ${product.productCategory}</p>
-      <button index="${index}">Add to Cart</button>
+      <button id="addToCart" index="${index}">Add to Cart</button>
       `;
       document.querySelector("#productsList").append(div);
     });
-    // addToCart(index) {
-    //     document.querySelector("#productsCart").innerHTML = "";
-
-    //     this.products.push()
-    // }
   }
-
-  totalPrice(productPrice) {
-    let total = productPrice;
-    let salesTax = 0.06;
-    let subtotal = total * salesTax;
-  }
+  // totalPrice(productPrice) {
+  //   let total = productPrice;
+  //   let salesTax = 0.06;
+  //   let subtotal = total * salesTax;
+  // }
 }
 
 class Items {
@@ -112,6 +107,17 @@ function display(list, location) {
   }
 }
 
+function addToCartHandler() {
+  event.preventDefault();
+  console.log("I was clicked");
+  let section = document.createElement("section");
+  section.innerHTML = `
+  <p>${newProduct.productName}</p>
+  <p>$${newProduct.productPrice}</p>
+      `;
+  document.querySelector("#productsCart").append(section);
+}
+
 const newProduct = new Products();
 newProduct.add(
   "Snazzy old camera",
@@ -119,72 +125,72 @@ newProduct.add(
   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
   "Cameras"
 );
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
-newProduct.add(
-  "Something Else",
-  "500",
-  "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
-  "Cameras"
-);
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
+// newProduct.add(
+//   "Something Else",
+//   "500",
+//   "This really awesome camera was actually owned by Marilyn Monroe! Seriously. If you don't buy it now you'll probably regret it for the rest of your life.",
+//   "Cameras"
+// );
 console.log(newProduct);
 newProduct.display();
 
@@ -316,3 +322,6 @@ newProduct.display();
 //       productCategory: "Spy Tech",
 //       productButton: "<button value='but12'>Add to cart</button>"
 //     }
+
+const addProductButton = document.querySelector("#addToCart");
+addProductButton.addEventListener("click", addToCartHandler);
