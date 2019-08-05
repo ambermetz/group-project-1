@@ -23,16 +23,15 @@
       <section id="productsPayment"><h2>Payment</h2>
         <form id="cash">
           <label for="amount_owed">Amount Owed</label>
-          <input name="amount_owed" type="text" />
+          <input id="owed" name="amount_owed" type="text"/>
           <label for="cash_amount">Cash Amount</label>
-          <input name="cash_amount" type="text" placeholder="Cash Amount" />
+          <input id="cashInput" name="cash_amount" type="text" placeholder="Cash Amount" />
           <label for="change_owed">Change Owed</label>
-          <input name="change_owed" type="text" />
-          <button class="submit" type="submit">Submit</button>
+          <input id="change" name="change_owed" type="text" />
         </form>
         <form id="credit">
           <label for="amount_owed_credit">Amount Owed</label>
-          <input name="amount_owed_credit" type="text" />
+          <input id="credit_owed" name="amount_owed_credit" type="text" />
           <label for="name_creditcard">Name</label>
           <input name="name_creditcard" type="text" />
           <label for="number_creditcard">Credit Card Number</label>
@@ -43,66 +42,8 @@
           <input name="cvv_creditcard" type="text" />
           <button class="submit" type="submit">Submit</button>
         </form>
-      </section>
-      </section>
-      <section id="productsReceipt"><h2>Receipt</h2></section>
-
-      <!-- CART MODAL -->
-      <div id="modals">
-        <div id="cart-modal">
-          <section id="cart-content">
-            <button class="cash-payment">Cash</button>
-            <button class="credit-payment">Credit</button>
-          </section>
-        </div>
-        <!-- CASH PAYMENT MODAL -->
-        <div id="cash-payment-modal">
-          <section class="checkout-cash-modal">
-            <form id="cash">
-              <label for="amount_owed">Amount Owed</label>
-              <input name="amount_owed" type="text" />
-              <label for="cash_amount">Cash Amount</label>
-              <input name="cash_amount" type="text" placeholder="Cash Amount" />
-              <label for="change_owed">Change Owed</label>
-              <input name="change_owed" type="text" />
-              <button class="submit" type="submit">Submit</button>
-            </form>
-          </section>
-        </div>
-
-        <!-- CREDIT PAYMENT MODAL -->
-        <div id="credit-payment-modal">
-          <section class="checkout-credit-modal">
-            <form id="credit">
-              <label for="amount_owed_credit">Amount Owed</label>
-              <input name="amount_owed_credit" type="text" />
-              <label for="name_creditcard">Name</label>
-              <input name="name_creditcard" type="text" />
-              <label for="number_creditcard">Credit Card Number</label>
-              <input name="number_creditcard" type="text" />
-              <label for="date_creditcard">Date</label>
-              <input name="date_creditcard" type="date" />
-              <label for="cvv_creditcard">CVV</label>
-              <input name="cvv_creditcard" type="text" />
-              <button class="submit" type="submit">Submit</button>
-            </form>
-          </section>
-        </div>
-
-        <!-- RECEIPT Modal content -->
-        <div id="receipt-modal">
-          <div class="modal">
-            <h2>Your Receipt</h2>
-            <p>You are taking home: ${product}</p>
-            <p>Your total was: ${total}</p>
-            <button class="modal-btn">Back to Home</button>
-            <i class="far fa-times-circle"></i>
-          </div>
-        </div>
-      </div>
-      <!-- END OF RECEIPT MODAL -->
+      <section id="productsReceipt"><h1>Receipt</h1></section>
     </main>
-    <!-- <footer><button id="submitCart">Cart</button></footer> -->
     <script src="scripts/script2.js"></script>
     <script src="https://kit.fontawesome.com/f7a782975f.js"></script>
   </body>
