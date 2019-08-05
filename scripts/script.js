@@ -24,6 +24,8 @@ function cashModalHandler(e) {
   document.querySelector("#cash-payment-modal").style.display = "flex";
   document.querySelector("#cart-modal").style.display = "none";
 }
+
+// Credit Modal
 const creditSelection = document.querySelector("#credit-payment-modal");
 
 document
@@ -34,6 +36,8 @@ function creditModalHandler(e) {
   document.querySelector("#credit-payment-modal").style.display = "flex";
   document.querySelector("#cart-modal").style.display = "none";
 }
+
+// Receipt Modal
 const cashReceipt = document.querySelector("#receipt-modal");
 document
   .querySelector(".checkout-cash-modal")
@@ -180,10 +184,13 @@ const products = {
     productButton: "<button value='but12'>Add to cart</button>"
   }
 };
-console.log(products);
+// console.log(products.camera.productName);
+
+let cart = [];
 
 // takes an array of items and reduces it to a single value.
-let productsTemplate = Object.values(products).reduce((acc, product) => {
+const productsTemplate = Object.values(products).reduce((acc, product) => {
+  console.log("cart", cart);
   return (
     acc +
     `<section id="${product.id}">   
@@ -195,35 +202,47 @@ let productsTemplate = Object.values(products).reduce((acc, product) => {
           <p class="productPrice">$${product.productPrice}</p>
           <p>${product.productDescription}</p>
           <p>Category: ${product.productCategory} </p>
-          <p>${product.productButton}</p>
+          <button onclick="addToCart(products.productName)">Add To Cart</button>
         </div>
       </section>
       `
   );
 }, "");
-// <button value="button1"><i class="fas fa-shopping-cart cart-icon"></i></button>
-// let cart = [];
 
-// class Cart {
-//   constructor() {
-//     this.cart = [];
-//   }
-//   add() {
-//     this.cart.push(newCart);
-//   }
-//   // }
+for (const productKey of cart) {
+  const prod = products[productKey];
+  prod.productPrice;
+  prod.productName;
+  products[productKey].productPrice;
+  products[productKey].productName;
+}
+// let shoppingCart = [];
+// const addToCart = name => {
+//   console.log("name", name);
+//   shoppingCart.push(name);
+// };
+// console.log(productsTemplate);
+// / <p>${product.productButton}</p>
 
-//   // class Prod {
-//   //   constructor(addProductName, addProductPrice) {
-//   //     let addProductName = addProductName;
-//   //     let addProductPrice = addProductPrice;
-//   //   }
-// }
+// let shoppingCart = [];
+
+function addToCart(name) {
+  console.log("name", name);
+  cart.push(name);
+}
+// console.log("cart", shoppingCart);
+
+// shoppingCart.push("caylea");
+// shoppingCart.push("tati");
+// shoppingCart.push("cay");
+// shoppingCart.push("pickle");
+// console.log(shoppingCart.map(c => c));
+
 function clickCartIconHandler(event) {
   event.preventDefault();
-  // console.log("You clicked me!!!!");
+
   if (event.target.value === "but1") {
-    console.log("You pressed button1");
+    addToCart(this.productName);
   } else if (event.target.value === "but2") {
     console.log("You pressed button2");
   } else if (event.target.value === "but3") {
@@ -248,27 +267,19 @@ function clickCartIconHandler(event) {
     console.log("You pressed button12");
   }
 
-  // for (const productKey of cart) {
-  //   const prod = products[productKey];
-  //   prod.productPrice;
-  //   prod.productName;
-  //   products[productKey].productPrice;
-  //   products[productKey].productName;
-  // }
-
-  // const div = document.createElement("div");
-  // div.innerHTML = `
-  //     <p>${products.productName}</p>
-  //     <p>${products.productPrice}</p>
-  //     `;
-  // document.querySelector("#cart-modal").append(div);
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <p>${products.productName}</p>
+    <p>${products.productPrice}</p>
+     `;
+  document.querySelector("#cart-modal").append(div);
 }
 
 // event listener
 
 document.querySelector("#productsList").innerHTML = productsTemplate;
 
-const cart = document.createElement("div");
+const newCart = document.createElement("div");
 
 document
   .querySelector("#camera")
@@ -279,7 +290,9 @@ document
 document
   .querySelector("#dohicky")
   .addEventListener("click", clickCartIconHandler);
-document.querySelector("#fan").addEventListener("click", clickCartIconHandler);
+document
+  .querySelector("#oldFan")
+  .addEventListener("click", clickCartIconHandler);
 document
   .querySelector("#microphone")
   .addEventListener("click", clickCartIconHandler);
@@ -307,4 +320,3 @@ document
 document
   .querySelector("#recorder")
   .addEventListener("click", clickCartIconHandler);
-// console.dir(newCart);
