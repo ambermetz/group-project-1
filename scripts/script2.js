@@ -148,17 +148,22 @@ function addToCartHandler(event) {
   let subtotal = newProduct.total * 0.06 + newProduct.total;
   document.querySelector("#owed").setAttribute("value", subtotal);
   document.querySelector("#credit_owed").setAttribute("value", subtotal);
+  document.querySelector("#productsReceipt").append(subtotal);
 }
 
+document.querySelector("#cashInput").addEventListener("input", cashSubmit);
 function cashSubmit(event) {
-  let index = event.target.attributes[0].value;
-  newProduct.total += newProduct.products[index].productPrice;
-  let subtotalTwo = newProduct.total * 0.06 + newProduct.total;
-  let cashInput = document.querySelector("#cashInput");
-  let changeOwed = Number(subtotalTwo) - Number(cashInput);
-  document.querySelector(".change").setAttribute("value", changeOwed);
-  document.querySelector(".change").addEventListener("input", cashSubmit);
+  let cashInput = document.querySelector("#cashInput").value;
+  let subtotal = newProduct.total * 0.06 + newProduct.total;
+  console.log(Number(cashInput));
+  console.log(subtotal);
+  let changeOwed = Number(subtotal) - Number(cashInput);
+  document.querySelector("#change").setAttribute("value", changeOwed);
 }
+
+// let index = event.target.attributes[0].value;
+
+// newProduct.total += newProduct.products[index].productPrice;
 
 //Disables the Amount Owed and change inputs.
 document.querySelector("#owed").disabled = true;
