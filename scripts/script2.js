@@ -119,6 +119,8 @@ function addToCartHandler(event) {
     document.querySelector("#productsTotal").append(totalDiv);
     document.querySelector("#productsReceipt").append(receiptItem);
   }
+  let subtotal = newProduct.total * 0.06 + newProduct.total;
+  document.querySelector("#owed").setAttribute("value", subtotal);
 }
 
 // let amountOwed = document.querySelector("#amount_owed");
@@ -129,6 +131,7 @@ function addToCartHandler(event) {
 // document.querySelector("#change_owed").append(changeOwed);
 
 const newProduct = new Products();
+
 newProduct.add(
   "Snazzy old camera",
   "500",
