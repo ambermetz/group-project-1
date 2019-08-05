@@ -41,9 +41,6 @@ class Items {
   }
 }
 
-// changeOwed = amountOwed - amountPayed;
-// document.querySelector("#change_owed").append(changeOwed);
-
 const newProduct = new Products();
 
 newProduct.add(
@@ -115,7 +112,6 @@ newProduct.add(
 
 display("#productsList", newProduct);
 console.log(newProduct);
-// newProduct.display();
 
 const addProductButton = document.querySelector("#productsList");
 addProductButton.addEventListener("click", addToCartHandler);
@@ -160,10 +156,6 @@ function cashSubmit(event) {
   let changeOwed = Number(subtotal) - Number(cashInput);
   document.querySelector("#change").setAttribute("value", changeOwed);
 }
-
-// let index = event.target.attributes[0].value;
-
-// newProduct.total += newProduct.products[index].productPrice;
 
 //Disables the Amount Owed and change inputs.
 document.querySelector("#owed").disabled = true;
