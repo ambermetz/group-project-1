@@ -1,56 +1,5 @@
 "use strict";
 
-// Cart Modal
-
-// const cartSubmit = document.querySelector("#submitCart");
-
-// document
-//   .querySelector("#submitCart")
-//   .addEventListener("click", cartModalHandler);
-
-// function cartModalHandler(e) {
-//   e.preventDefault();
-//   document.querySelector("#cart-modal").style.display = "flex";
-// }
-
-// // Cash Modal
-
-// const cashSelection = document.querySelector("#cash-payment-modal");
-// document
-//   .querySelector("#cart-modal")
-//   .addEventListener("click", cashModalHandler);
-// function cashModalHandler(e) {
-//   e.preventDefault();
-//   document.querySelector("#cash-payment-modal").style.display = "flex";
-//   document.querySelector("#cart-modal").style.display = "none";
-// }
-// const creditSelection = document.querySelector("#credit-payment-modal");
-
-// document
-//   .querySelector("#cart-modal")
-//   .addEventListener("click", creditModalHandler);
-// function creditModalHandler(e) {
-//   e.preventDefault();
-//   document.querySelector("#credit-payment-modal").style.display = "flex";
-//   document.querySelector("#cart-modal").style.display = "none";
-// }
-// const cashReceipt = document.querySelector("#receipt-modal");
-// document
-//   .querySelector(".checkout-cash-modal")
-//   .addEventListener("submit", showModal);
-
-// const creditReceipt = document.querySelector("#receipt-modal");
-// document
-//   .querySelector(".checkout-credit-modal")
-//   .addEventListener("submit", showModal);
-
-// function showModal(e) {
-//   e.preventDefault();
-//   document.querySelector("#receipt-modal").style.display = "flex";
-//   document.querySelector("#credit-payment-modal").style.display = "none";
-//   document.querySelector("#cash-payment-modal").style.display = "none";
-// }
-
 class Products {
   constructor() {
     this.products = [];
@@ -83,8 +32,6 @@ function display(location, list) {
   }
 }
 
-function totals() {}
-
 class Items {
   constructor(productName, productPrice, productDescription, productCategory) {
     this.productName = productName;
@@ -93,42 +40,6 @@ class Items {
     this.productCategory = productCategory;
   }
 }
-// let total = 0;
-function addToCartHandler(event) {
-  let index = event.target.attributes[0].value;
-  if (event.target.classList.contains("addToCart")) {
-    let section = document.createElement("section");
-    let itemContent = `<p> $${newProduct.products[index].productPrice} - ${
-      newProduct.products[index].productName
-    }</p>`;
-    section.innerHTML = itemContent;
-    let receiptItem = document.createElement("section");
-    receiptItem.innerHTML = itemContent;
-    document.querySelector("#productsCart").append(section);
-
-    newProduct.total += newProduct.products[index].productPrice;
-
-    document.querySelector("#productsTotal").innerHTML = "";
-    const totalDiv = document.createElement("div");
-    totalDiv.innerHTML = `
-    <h1>Total<h1>
-    <p>Total: $${newProduct.total}</p>
-    <p>Sales Tax: ${0.06}</p>
-    <p>Subtotal: $${newProduct.total * 0.06 + newProduct.total}</p>
-    `;
-    document.querySelector("#productsTotal").append(totalDiv);
-    document.querySelector("#productsReceipt").append(receiptItem);
-  }
-  let subtotal = newProduct.total * 0.06 + newProduct.total;
-  document.querySelector("#owed").setAttribute("value", subtotal);
-  document.querySelector("#credit_owed").setAttribute("value", subtotal);
-}
-document.querySelector("#owed").disabled = true;
-document.querySelector("#credit_owed").disabled = true;
-document.querySelector("#change").disabled = true;
-// let amountOwed = document.querySelector("#amount_owed");
-// let amountPayed = document.querySelector("#cash_Amount");
-// let changeOwed = document.querySelector("#change_owed");
 
 // changeOwed = amountOwed - amountPayed;
 // document.querySelector("#change_owed").append(changeOwed);
@@ -209,18 +120,47 @@ console.log(newProduct);
 const addProductButton = document.querySelector("#productsList");
 addProductButton.addEventListener("click", addToCartHandler);
 
-// function displayItem(location, list) {
-//   document.querySelector(location).innerHTML = "";
-//   for (let item of list) {
-//     const div = document.createElement("div");
-//     div.innerHTML = `
-//     <p>${newProduct.products[0].productName}</p>
-//     <p>$${newProduct.products[0].productPrice}</p>
-//     <p>${newProduct.products[0].productDescription}</p>
-//     <p>Category: ${newProduct.products[0].productCategory}</p>
-//     <button id="addToCart">Add to Cart</button>
-//     `;
-//   }
-// }
-// array.displayItem("#example", exampleList);
-// showTotals("#billBudget", budgetList.list[0].bill);
+function addToCartHandler(event) {
+  let index = event.target.attributes[0].value;
+  if (event.target.classList.contains("addToCart")) {
+    let section = document.createElement("section");
+    let itemContent = `<p> $${newProduct.products[index].productPrice} - ${
+      newProduct.products[index].productName
+    }</p>`;
+    section.innerHTML = itemContent;
+    let receiptItem = document.createElement("section");
+    receiptItem.innerHTML = itemContent;
+    document.querySelector("#productsCart").append(section);
+
+    newProduct.total += newProduct.products[index].productPrice;
+
+    document.querySelector("#productsTotal").innerHTML = "";
+    const totalDiv = document.createElement("div");
+    totalDiv.innerHTML = `
+    <h1>Total<h1>
+    <p>Total: $${newProduct.total}</p>
+    <p>Sales Tax: ${0.06}</p>
+    <p>Subtotal: $${newProduct.total * 0.06 + newProduct.total}</p>
+    `;
+    document.querySelector("#productsTotal").append(totalDiv);
+    document.querySelector("#productsReceipt").append(receiptItem);
+  }
+  let subtotal = newProduct.total * 0.06 + newProduct.total;
+  document.querySelector("#owed").setAttribute("value", subtotal);
+  document.querySelector("#credit_owed").setAttribute("value", subtotal);
+}
+
+function cashSubmit(event) {
+  let index = event.target.attributes[0].value;
+  newProduct.total += newProduct.products[index].productPrice;
+  let subtotalTwo = newProduct.total * 0.06 + newProduct.total;
+  let cashInput = document.querySelector("#cashInput");
+  let changeOwed = Number(subtotalTwo) - Number(cashInput);
+  document.querySelector(".change").setAttribute("value", changeOwed);
+  document.querySelector(".change").addEventListener("input", cashSubmit);
+}
+
+//Disables the Amount Owed and change inputs.
+document.querySelector("#owed").disabled = true;
+document.querySelector("#credit_owed").disabled = true;
+document.querySelector("#change").disabled = true;
