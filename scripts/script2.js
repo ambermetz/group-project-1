@@ -121,8 +121,11 @@ function addToCartHandler(event) {
   }
   let subtotal = newProduct.total * 0.06 + newProduct.total;
   document.querySelector("#owed").setAttribute("value", subtotal);
+  document.querySelector("#credit_owed").setAttribute("value", subtotal);
 }
-
+document.querySelector("#owed").disabled = true;
+document.querySelector("#credit_owed").disabled = true;
+document.querySelector("#change").disabled = true;
 // let amountOwed = document.querySelector("#amount_owed");
 // let amountPayed = document.querySelector("#cash_Amount");
 // let changeOwed = document.querySelector("#change_owed");
