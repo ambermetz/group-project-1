@@ -8,14 +8,39 @@ nav {
 
 h1 {
   color: teal;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  color: teal;
+}
+
+div {
+  background-color: lightgrey;
+  background-color: rgb(0, 0, 0); /* Makes the containers opaque */
+  background-color: rgba(0, 0, 0, 0.1); /* Makes the containers opaque */
 }
 
 section {
+  /* display: flex; /* Removing display: flex allows for white spacing between items
+  flex-direction: column; */
   margin-bottom: 10px;
   border-radius: 3px;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.1);
-  /* background: rgba(255, 255, 255, 0.5); */ /* Makes the containers opaque white, but this is set to mobile which is not correct */
+  /* background: rgba(255, 255, 255, 0.5); Makes the containers opaque white */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  background-color: rgb(0, 0, 0); /* Makes the containers opaque */
+  background-color: rgba(0, 0, 0, 0.1); /* Makes the containers opaque */
+}
+
+input {
+  width: 30%;
+  margin-bottom: 10px;
 }
 
 img {
@@ -40,12 +65,16 @@ img {
 }
 
 button {
-  border-radius: 3px;
+  /* display: flex;
+  justify-content: center;  */
+  border-radius: 5px;
   padding: 15px;
-  width: 100%;
-  background-color: whitesmoke; /* Also changes color of modal buttons */
+  margin-bottom: 10px;
+  width: 80%;
+  background-color: teal; 
+  color: whitesmoke;
   font-size: 12px;
-  margin: 5px;
+  transform: translate(10%); /* Centers button */
 }
 
 footer {
@@ -73,6 +102,7 @@ footer {
 
 p {
   font-size: 12px;
+  padding: 10px;
 }
 
 /* CART MODAL */
@@ -184,19 +214,8 @@ p {
   section {
     margin-bottom: 10px;
     border-radius: 3px;
-    background: rgba(
-      255,
-      255,
-      255,
-      0.5
-    ); /* Makes the containers opaque white */
   }
   button {
     font-size: 16px;
-  }
-  body {
-    background-image: url("https://image.freepik.com/free-photo/grunge-aquarelle-painted-textured-surface_23-2148118078.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }
