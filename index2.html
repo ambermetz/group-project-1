@@ -16,11 +16,35 @@
       <h1>Vintage Tech</h1>
     </nav>
     <main>
-      <section id="productsList">Products</section>
-      <section id="productsCart">Cart</section>
-      <section id="productsTotal">Total</section>
-      <section id="productsPayment">Total</section>
-      <section id="productsReceipt">Receipt</section>
+      <section id="productsList"><h1>Products</h1></section>
+      <section id="productsCart"><h1>Cart</h1></section>
+      <section id="productsTotal"><h1>Total</h1></section>
+      <section id="productsPayment"><h1>Payment</h1>
+        <form id="cash">
+          <label for="amount_owed">Amount Owed</label>
+          <input name="amount_owed" type="text" />
+          <label for="cash_amount">Cash Amount</label>
+          <input name="cash_amount" type="text" placeholder="Cash Amount" />
+          <label for="change_owed">Change Owed</label>
+          <input name="change_owed" type="text" />
+          <button class="submit" type="submit">Submit</button>
+        </form>
+        <form id="credit">
+          <label for="amount_owed_credit">Amount Owed</label>
+          <input name="amount_owed_credit" type="text" />
+          <label for="name_creditcard">Name</label>
+          <input name="name_creditcard" type="text" />
+          <label for="number_creditcard">Credit Card Number</label>
+          <input name="number_creditcard" type="text" />
+          <label for="date_creditcard">Date</label>
+          <input name="date_creditcard" type="date" />
+          <label for="cvv_creditcard">CVV</label>
+          <input name="cvv_creditcard" type="text" />
+          <button class="submit" type="submit">Submit</button>
+        </form>
+      </section>
+      </section>
+      <section id="productsReceipt"><h1>Receipt</h1></section>
 
       <!-- CART MODAL -->
       <div id="modals">
@@ -77,8 +101,9 @@
       </div>
       <!-- END OF RECEIPT MODAL -->
     </main>
+    <!-- <footer><button id="submitCart">Cart</button></footer> -->
+    <script src="scripts/script2.js"></script>
     <footer><button id="submitCart">Cart</button></footer>
-    <script src="scripts/new.js"></script>
     <script src="https://kit.fontawesome.com/f7a782975f.js"></script>
   </body>
 </html>
